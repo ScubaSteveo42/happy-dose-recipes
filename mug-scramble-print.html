@@ -25,20 +25,9 @@
             background-color: var(--white);
             color: var(--text-dark);
             line-height: 1.6;
-        }
-
-        .page {
-            width: 8.5in;
-            min-height: 11in;
-            margin: 0 auto 0.5in auto;
-            padding: 0.75in;
-            background: white;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            page-break-after: always;
-        }
-
-        .page:last-child {
-            page-break-after: avoid;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
         .header {
@@ -46,8 +35,10 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 3px solid var(--accent-orange);
+            padding: 20px;
+            background: linear-gradient(135deg, var(--primary-green) 0%, #0f4233 100%);
+            border-radius: 16px;
+            color: white;
         }
 
         .logo {
@@ -55,30 +46,46 @@
             width: auto;
             max-width: 150px;
             object-fit: contain;
+            filter: brightness(1.2);
         }
 
-        .page-number {
+        .pdf-download-btn {
+            background: var(--accent-orange);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
             font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            color: var(--primary-green);
+            font-weight: 700;
             font-size: 16px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(242, 106, 27, 0.3);
         }
 
-        .title-page {
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            min-height: calc(11in - 1.5in);
+        .pdf-download-btn:hover {
+            background: #e85d15;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(242, 106, 27, 0.4);
+        }
+
+        .pdf-download-btn::before {
+            content: "📄";
+            font-size: 18px;
         }
 
         .main-title {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            font-size: 48px;
+            font-size: 42px;
             color: var(--primary-green);
-            margin-bottom: 20px;
+            margin-bottom: 12px;
             line-height: 1.2;
+            text-align: center;
         }
 
         .highlight-text {
@@ -86,63 +93,57 @@
         }
 
         .subtitle {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 600;
-            font-size: 20px;
+            font-size: 18px;
             color: var(--text-dark);
-            margin-bottom: 40px;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .download-notice {
+            background: linear-gradient(135deg, #fff5f0 0%, #ffede2 100%);
+            border: 3px solid var(--accent-orange);
+            border-radius: 16px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .download-notice h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .download-notice p {
+            margin-bottom: 15px;
+            font-size: 16px;
         }
 
         .intro-box {
             background: linear-gradient(135deg, #fff5f0 0%, #ffede2 100%);
             color: var(--text-dark);
-            padding: 30px;
+            padding: 24px;
             border-radius: 16px;
-            margin: 40px 0;
+            margin-bottom: 40px;
             border: 4px solid var(--accent-orange);
             box-shadow: 0 4px 20px rgba(242, 106, 27, 0.15);
         }
 
         .intro-text {
-            font-size: 18px;
+            font-size: 16px;
             text-align: center;
             font-weight: 500;
-            margin-bottom: 20px;
-        }
-
-        .section-title {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 32px;
-            color: var(--primary-green);
-            margin: 30px 0 25px 0;
-            padding-bottom: 15px;
-            border-bottom: 3px solid var(--accent-orange);
-            text-align: center;
-        }
-
-        .subsection-title {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 24px;
-            color: var(--primary-green);
-            margin: 25px 0 15px 0;
-            display: flex;
-            align-items: center;
-        }
-
-        .subsection-title::before {
-            content: "■";
-            color: var(--accent-orange);
-            margin-right: 12px;
-            font-size: 20px;
         }
 
         .macro-tips {
             background-color: #f0f8f5;
-            padding: 25px;
+            padding: 24px;
             border-radius: 12px;
-            margin: 25px 0;
+            margin-bottom: 32px;
             border-left: 5px solid var(--primary-green);
         }
 
@@ -167,33 +168,51 @@
         }
 
         .tip-list li {
-            padding: 8px 0;
-            font-size: 16px;
+            padding: 6px 0;
+            font-size: 15px;
             position: relative;
-            padding-left: 25px;
+            padding-left: 20px;
         }
 
         .tip-list li::before {
             content: "•";
             color: var(--primary-green);
             font-weight: 700;
-            font-size: 20px;
+            font-size: 18px;
             position: absolute;
             left: 0;
         }
 
-        .grocery-grid {
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 28px;
+            color: var(--primary-green);
+            margin: 40px 0 20px 0;
+            padding-bottom: 12px;
+            border-bottom: 3px solid var(--accent-orange);
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::before {
+            content: "■";
+            color: var(--accent-orange);
+            margin-right: 12px;
+            font-size: 24px;
+        }
+
+        .grocery-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 25px;
-            margin: 25px 0;
+            gap: 24px;
+            margin-bottom: 40px;
         }
 
         .grocery-category {
             background-color: var(--light-gray);
             padding: 20px;
             border-radius: 12px;
-            break-inside: avoid;
         }
 
         .category-title {
@@ -209,10 +228,11 @@
         }
 
         .grocery-list li {
-            padding: 5px 0;
+            padding: 4px 0;
             font-size: 15px;
             position: relative;
             padding-left: 20px;
+            line-height: 1.4;
         }
 
         .grocery-list li::before {
@@ -225,31 +245,37 @@
         }
 
         .combo-section {
-            margin: 30px 0;
+            margin-bottom: 32px;
         }
 
         .combo-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-            margin: 20px 0;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
         }
 
         .combo-card {
             background-color: var(--white);
             border: 2px solid #e8e8e8;
             border-radius: 12px;
-            padding: 16px;
+            padding: 12px;
+            transition: all 0.3s ease;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            break-inside: avoid;
+        }
+
+        .combo-card:hover {
+            border-color: var(--accent-orange);
+            box-shadow: 0 4px 12px rgba(242, 106, 27, 0.15);
+            transform: translateY(-2px);
         }
 
         .combo-title {
             font-family: 'Inter', sans-serif;
             font-weight: 500;
-            font-size: 16px;
+            font-size: 14px;
             color: var(--text-dark);
             flex: 1;
         }
@@ -257,23 +283,42 @@
         .combo-macros {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            font-size: 14px;
+            font-size: 12px;
             color: var(--primary-green);
             background-color: #f0f8f5;
-            padding: 8px 16px;
-            border-radius: 20px;
+            padding: 4px 10px;
+            border-radius: 15px;
             white-space: nowrap;
-            margin-left: 15px;
+            margin-left: 12px;
+        }
+
+        .combo-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 18px;
+            color: var(--accent-orange);
+            margin: 24px 0 12px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .combo-subtitle::before {
+            content: "■";
+            color: var(--accent-orange);
+            margin-right: 10px;
+            font-size: 18px;
         }
 
         .footer {
             text-align: center;
-            padding-top: 20px;
+            padding: 32px 20px;
             border-top: 2px solid var(--light-gray);
             font-size: 12px;
             color: var(--text-dark);
             font-family: 'Inter', sans-serif;
-            margin-top: 30px;
+            margin-top: 40px;
+            background-color: var(--light-gray);
+            border-radius: 12px;
         }
 
         .footer-brand {
@@ -281,290 +326,290 @@
             color: var(--primary-green);
         }
 
-        @media print {
-            body {
-                margin: 0;
-                padding: 0;
+        .sticky-download {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .sticky-download .pdf-download-btn {
+            padding: 15px 25px;
+            font-size: 14px;
+            box-shadow: 0 6px 25px rgba(242, 106, 27, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
             }
             
-            .page {
-                margin: 0;
-                box-shadow: none;
-                page-break-after: always;
+            .grocery-section {
+                grid-template-columns: 1fr;
             }
             
-            .page:last-child {
-                page-break-after: avoid;
+            .combo-grid {
+                grid-template-columns: 1fr;
             }
             
-            .combo-card, .grocery-category, .macro-tips {
-                break-inside: avoid;
-                page-break-inside: avoid;
+            .combo-card {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .combo-macros {
+                margin-left: 0;
+                margin-top: 10px;
+                text-align: center;
+            }
+            
+            .main-title {
+                font-size: 32px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- PAGE 1: Title Page -->
-    <div class="page title-page">
-        <div class="header">
-            <img src="https://raw.githubusercontent.com/ScubaSteveo42/happy-dose-recipes/c5a1554e30bc432c1286917fb3fb707fcaba7815/NO%20BQ%20HQ.png" alt="Happy Dose" class="logo">
-            <div class="page-number">Page 1</div>
+    <div class="header">
+        <img src="https://i.imgur.com/gnZh5k7.png" alt="Happy Dose" class="logo">
+        <a href="#" class="pdf-download-btn" onclick="downloadPDF()">Download Printable PDF</a>
+    </div>
+
+    <h1 class="main-title">
+        <span class="highlight-text">MUG SCRAMBLE</span> MASTER GUIDE
+    </h1>
+    <p class="subtitle">25+ High-Protein Recipes Ready in 2 Minutes</p>
+
+    <div class="download-notice">
+        <h3>🎯 Get Both Formats!</h3>
+        <p><strong>Interactive Version:</strong> Scroll through this page on any device - perfect for quick reference while cooking!</p>
+        <p><strong>Printable PDF:</strong> Click the download button for a beautiful 4-page PDF to print and keep in your kitchen.</p>
+        <a href="#" class="pdf-download-btn" onclick="downloadPDF()">Download PDF Version</a>
+    </div>
+
+    <div class="intro-box">
+        <p class="intro-text">
+            <strong>Each combo assumes ~1 cup liquid egg whites (~120 cal, 25g protein). Add 1 whole egg for richness (+70 cal, +6g protein).</strong>
+        </p>
+    </div>
+
+    <div class="macro-tips">
+        <h3>How to Make Any Mug Scramble</h3>
+        <ul class="tip-list">
+            <li><strong>Step 1:</strong> Spray mug with cooking spray or add a tiny bit of oil</li>
+            <li><strong>Step 2:</strong> Add harder vegetables (broccoli, peppers) and microwave 30-60 seconds</li>
+            <li><strong>Step 3:</strong> Pour in egg whites (and whole egg if using)</li>
+            <li><strong>Step 4:</strong> Add softer ingredients (spinach, cheese, pre-cooked meats)</li>
+            <li><strong>Step 5:</strong> Microwave 90 seconds, stir, then 30-60 seconds more until set</li>
+            <li><strong>Step 6:</strong> Add final toppings (avocado, salsa, hot sauce) and enjoy!</li>
+        </ul>
+    </div>
+
+    <div class="macro-tips">
+        <h3>Macro Tips for Mugs</h3>
+        <ul class="tip-list">
+            <li><strong>Egg whites:</strong> ~25 g protein / 120 cal per cup</li>
+            <li><strong>Add 1 whole egg:</strong> +6 g protein, +70 cal, +5 g fat (better taste/texture)</li>
+            <li><strong>Cheese:</strong> ~20–80 cal per ounce; go light to keep fat moderate</li>
+            <li><strong>Veggies:</strong> nearly free calorie-wise, add bulk & micronutrients</li>
+            <li><strong>Pre-cook tougher veggies</strong> (broccoli, peppers) 30–60 sec before adding whites</li>
+        </ul>
+    </div>
+
+    <h2 class="section-title">Grocery Shopping List</h2>
+    
+    <div class="grocery-section">
+        <div class="grocery-category">
+            <h3 class="category-title">Eggs & Protein Base</h3>
+            <ul class="grocery-list">
+                <li>Liquid egg whites</li>
+                <li>Whole eggs (optional for richness)</li>
+                <li>Turkey bacon</li>
+                <li>Canadian bacon</li>
+                <li>Pre-cooked chicken or turkey sausage</li>
+                <li>Deli turkey or chicken slices</li>
+            </ul>
         </div>
-        
-        <div>
-            <h1 class="main-title">
-                <span class="highlight-text">MUG SCRAMBLE</span><br>
-                MASTER GUIDE
-            </h1>
-            
-            <p class="subtitle">25+ High-Protein Recipes Ready in 2 Minutes</p>
-            
-            <div class="intro-box">
-                <p class="intro-text">
-                    <strong>Transform your mornings with quick, high-protein meals!</strong>
-                </p>
-                <p class="intro-text">
-                    Each combo assumes ~1 cup liquid egg whites (~120 cal, 25g protein).<br>
-                    Add 1 whole egg for richness (+70 cal, +6g protein).
-                </p>
-            </div>
-            
-            <div class="macro-tips">
-                <h3>How to Make Any Mug Scramble</h3>
-                <ul class="tip-list">
-                    <li><strong>Step 1:</strong> Spray mug with cooking spray or add a tiny bit of oil</li>
-                    <li><strong>Step 2:</strong> Add harder vegetables (broccoli, peppers) and microwave 30-60 seconds</li>
-                    <li><strong>Step 3:</strong> Pour in egg whites (and whole egg if using)</li>
-                    <li><strong>Step 4:</strong> Add softer ingredients (spinach, cheese, pre-cooked meats)</li>
-                    <li><strong>Step 5:</strong> Microwave 90 seconds, stir, then 30-60 seconds more until set</li>
-                    <li><strong>Step 6:</strong> Add final toppings (avocado, salsa, hot sauce) and enjoy!</li>
-                </ul>
-            </div>
-            
-            <div class="macro-tips">
-                <h3>Macro Tips for Mugs</h3>
-                <ul class="tip-list">
-                    <li><strong>Egg whites:</strong> ~25 g protein / 120 cal per cup</li>
-                    <li><strong>Add 1 whole egg:</strong> +6 g protein, +70 cal, +5 g fat (better taste/texture)</li>
-                    <li><strong>Cheese:</strong> ~20–80 cal per ounce; go light to keep fat moderate</li>
-                    <li><strong>Veggies:</strong> nearly free calorie-wise, add bulk & micronutrients</li>
-                    <li><strong>Pre-cook tougher veggies</strong> (broccoli, peppers) 30–60 sec before adding whites</li>
-                </ul>
-            </div>
+
+        <div class="grocery-category">
+            <h3 class="category-title">Cheese & Dairy</h3>
+            <ul class="grocery-list">
+                <li>Light cheddar</li>
+                <li>Shredded mozzarella</li>
+                <li>Swiss</li>
+                <li>Feta crumbles</li>
+                <li>Parmesan</li>
+                <li>Goat cheese</li>
+            </ul>
         </div>
-        
-        <div class="footer">
-            <p>© <span class="footer-brand">Happy Dose</span> • support@happydose.fit • For personal use only</p>
+
+        <div class="grocery-category">
+            <h3 class="category-title">Vegetables & Add-ins</h3>
+            <ul class="grocery-list">
+                <li>Baby spinach</li>
+                <li>Mushrooms</li>
+                <li>Zucchini</li>
+                <li>Diced tomatoes</li>
+                <li>Broccoli florets</li>
+                <li>Cauliflower rice</li>
+                <li>Bell peppers (red, green, yellow)</li>
+                <li>Onions (diced or frozen)</li>
+                <li>Asparagus</li>
+                <li>Brussels sprouts</li>
+                <li>Olives</li>
+                <li>Sundried tomatoes</li>
+                <li>Roasted red peppers</li>
+                <li>Artichoke hearts</li>
+                <li>Jalapeños</li>
+                <li>Corn (frozen or canned)</li>
+            </ul>
+        </div>
+
+        <div class="grocery-category">
+            <h3 class="category-title">Flavor & Toppings</h3>
+            <ul class="grocery-list">
+                <li>Salsa or pico de gallo</li>
+                <li>Hot sauce / sriracha</li>
+                <li>Pesto</li>
+                <li>Tzatziki sauce</li>
+                <li>Avocado</li>
+                <li>Bacon bits</li>
+                <li>Everything bagel seasoning</li>
+                <li>Nutritional yeast (optional protein boost)</li>
+                <li>Hemp seeds</li>
+                <li>Cottage cheese</li>
+            </ul>
         </div>
     </div>
 
-    <!-- PAGE 2: Grocery List -->
-    <div class="page">
-        <div class="header">
-            <img src="https://raw.githubusercontent.com/ScubaSteveo42/happy-dose-recipes/c5a1554e30bc432c1286917fb3fb707fcaba7815/NO%20BQ%20HQ.png" alt="Happy Dose" class="logo">
-            <div class="page-number">Page 2</div>
-        </div>
-        
-        <h2 class="section-title">Grocery Shopping List</h2>
-        
-        <div class="grocery-grid">
-            <div class="grocery-category">
-                <h3 class="category-title">Eggs & Protein Base</h3>
-                <ul class="grocery-list">
-                    <li>Liquid egg whites</li>
-                    <li>Whole eggs (optional for richness)</li>
-                    <li>Turkey bacon</li>
-                    <li>Canadian bacon</li>
-                    <li>Pre-cooked chicken or turkey sausage</li>
-                    <li>Deli turkey or chicken slices</li>
-                </ul>
+    <div class="combo-section">
+        <h3 class="combo-subtitle">Veggie-Heavy</h3>
+        <div class="combo-grid">
+            <div class="combo-card">
+                <div class="combo-title">Spinach + mushrooms + feta + salsa</div>
+                <div class="combo-macros">≈170 cal / 27g protein</div>
             </div>
-
-            <div class="grocery-category">
-                <h3 class="category-title">Cheese & Dairy</h3>
-                <ul class="grocery-list">
-                    <li>Light cheddar</li>
-                    <li>Shredded mozzarella</li>
-                    <li>Swiss</li>
-                    <li>Feta crumbles</li>
-                    <li>Parmesan</li>
-                    <li>Goat cheese</li>
-                </ul>
+            <div class="combo-card">
+                <div class="combo-title">Zucchini + diced tomato + mozzarella + pesto drizzle</div>
+                <div class="combo-macros">≈180 cal / 26g protein</div>
             </div>
-
-            <div class="grocery-category">
-                <h3 class="category-title">Vegetables & Add-ins</h3>
-                <ul class="grocery-list">
-                    <li>Baby spinach</li>
-                    <li>Mushrooms</li>
-                    <li>Zucchini</li>
-                    <li>Diced tomatoes</li>
-                    <li>Broccoli florets</li>
-                    <li>Cauliflower rice</li>
-                    <li>Bell peppers (red, green, yellow)</li>
-                    <li>Onions (diced or frozen)</li>
-                    <li>Asparagus</li>
-                    <li>Brussels sprouts</li>
-                    <li>Olives</li>
-                    <li>Sundried tomatoes</li>
-                    <li>Roasted red peppers</li>
-                    <li>Artichoke hearts</li>
-                    <li>Jalapeños</li>
-                    <li>Corn (frozen or canned)</li>
-                </ul>
+            <div class="combo-card">
+                <div class="combo-title">Broccoli + cheddar + hot sauce</div>
+                <div class="combo-macros">≈200 cal / 27g protein</div>
             </div>
-
-            <div class="grocery-category">
-                <h3 class="category-title">Flavor & Toppings</h3>
-                <ul class="grocery-list">
-                    <li>Salsa or pico de gallo</li>
-                    <li>Hot sauce / sriracha</li>
-                    <li>Pesto</li>
-                    <li>Tzatziki sauce</li>
-                    <li>Avocado</li>
-                    <li>Bacon bits</li>
-                    <li>Everything bagel seasoning</li>
-                    <li>Nutritional yeast (optional protein boost)</li>
-                    <li>Hemp seeds</li>
-                    <li>Cottage cheese</li>
-                </ul>
+            <div class="combo-card">
+                <div class="combo-title">Cauliflower rice + peppers + parmesan + garlic</div>
+                <div class="combo-macros">≈180 cal / 27g protein</div>
             </div>
         </div>
-        
-        <div class="footer">
-            <p>© <span class="footer-brand">Happy Dose</span> • support@happydose.fit • For personal use only</p>
-        </div>
-    </div>
 
-    <!-- PAGE 3: Recipe Combinations -->
-    <div class="page">
-        <div class="header">
-            <img src="https://raw.githubusercontent.com/ScubaSteveo42/happy-dose-recipes/c5a1554e30bc432c1286917fb3fb707fcaba7815/NO%20BQ%20HQ.png" alt="Happy Dose" class="logo">
-            <div class="page-number">Page 3</div>
-        </div>
-        
-        <h2 class="section-title">Recipe Combinations</h2>
-        
-        <div class="combo-section">
-            <h3 class="subsection-title">Veggie-Heavy</h3>
-            <div class="combo-grid">
-                <div class="combo-card">
-                    <div class="combo-title">Spinach + mushrooms + feta + salsa</div>
-                    <div class="combo-macros">≈170 cal / 27g protein</div>
-                </div>
-                <div class="combo-card">
-                    <div class="combo-title">Zucchini + diced tomato + mozzarella + pesto drizzle</div>
-                    <div class="combo-macros">≈180 cal / 26g protein</div>
-                </div>
-                <div class="combo-card">
-                    <div class="combo-title">Broccoli + cheddar + hot sauce</div>
-                    <div class="combo-macros">≈200 cal / 27g protein</div>
-                </div>
-                <div class="combo-card">
-                    <div class="combo-title">Cauliflower rice + peppers + parmesan + garlic</div>
-                    <div class="combo-macros">≈180 cal / 27g protein</div>
-                </div>
+        <h3 class="combo-subtitle">Lean Breakfast Classics</h3>
+        <div class="combo-grid">
+            <div class="combo-card">
+                <div class="combo-title">Turkey bacon + spinach + light cheddar</div>
+                <div class="combo-macros">≈210 cal / 30g protein</div>
             </div>
-
-            <h3 class="subsection-title">Lean Breakfast Classics</h3>
-            <div class="combo-grid">
-                <div class="combo-card">
-                    <div class="combo-title">Turkey bacon + spinach + light cheddar</div>
-                    <div class="combo-macros">≈210 cal / 30g protein</div>
-                </div>
-                <div class="combo-card">
-                    <div class="combo-title">Deli turkey + tomato + Swiss + mustard</div>
-                    <div class="combo-macros">≈190 cal / 32g protein</div>
-                </div>
-                <div class="combo-card">
-                    <div class="combo-title">Canadian bacon + bell pepper + mozzarella</div>
-                    <div class="combo-macros">≈220 cal / 31g protein</div>
-                </div>
+            <div class="combo-card">
+                <div class="combo-title">Deli turkey + tomato + Swiss + mustard</div>
+                <div class="combo-macros">≈190 cal / 32g protein</div>
             </div>
-
-            <h3 class="subsection-title">Southwest / Tex-Mex</h3>
-            <div class="combo-grid">
-                <div class="combo-card">
-                    <div class="combo-title">Black beans + peppers + salsa + light cheddar</div>
-                    <div class="combo-macros">≈230 cal / 28g protein</div>
-                </div>
-                <div class="combo-card">
-                    <div class="combo-title">Turkey sausage + pico + avocado (after)</div>
-                    <div class="combo-macros">≈260 cal / 30g protein</div>
-                </div>
-                <div class="combo-card">
-                    <div class="combo-title">Jalapeños + corn + cotija + hot sauce</div>
-                    <div class="combo-macros">≈240 cal / 27g protein</div>
-                </div>
+            <div class="combo-card">
+                <div class="combo-title">Canadian bacon + bell pepper + mozzarella</div>
+                <div class="combo-macros">≈220 cal / 31g protein</div>
             </div>
         </div>
-        
-        <div class="footer">
-            <p>© <span class="footer-brand">Happy Dose</span> • support@happydose.fit • For personal use only</p>
+
+        <h3 class="combo-subtitle">Southwest / Tex-Mex</h3>
+        <div class="combo-grid">
+            <div class="combo-card">
+                <div class="combo-title">Black beans + peppers + salsa + light cheddar</div>
+                <div class="combo-macros">≈230 cal / 28g protein</div>
+            </div>
+            <div class="combo-card">
+                <div class="combo-title">Turkey sausage + pico + avocado (after)</div>
+                <div class="combo-macros">≈260 cal / 30g protein</div>
+            </div>
+            <div class="combo-card">
+                <div class="combo-title">Jalapeños + corn + cotija + hot sauce</div>
+                <div class="combo-macros">≈240 cal / 27g protein</div>
+            </div>
+        </div>
+
+        <h3 class="combo-subtitle">Mediterranean</h3>
+        <div class="combo-grid">
+            <div class="combo-card">
+                <div class="combo-title">Spinach + olives + feta + sundried tomato</div>
+                <div class="combo-macros">≈200 cal / 26g protein</div>
+            </div>
+            <div class="combo-card">
+                <div class="combo-title">Roasted red peppers + artichokes + parmesan</div>
+                <div class="combo-macros">≈210 cal / 27g protein</div>
+            </div>
+            <div class="combo-card">
+                <div class="combo-title">Chicken sausage + zucchini + tzatziki (after)</div>
+                <div class="combo-macros">≈250 cal / 30g protein</div>
+            </div>
+        </div>
+
+        <h3 class="combo-subtitle">Savory & Filling</h3>
+        <div class="combo-grid">
+            <div class="combo-card">
+                <div class="combo-title">Mushroom + onion + Swiss + Worcestershire</div>
+                <div class="combo-macros">≈200 cal / 27g protein</div>
+            </div>
+            <div class="combo-card">
+                <div class="combo-title">Asparagus + goat cheese + chives</div>
+                <div class="combo-macros">≈230 cal / 28g protein</div>
+            </div>
+            <div class="combo-card">
+                <div class="combo-title">Brussels sprouts + bacon bits + parmesan</div>
+                <div class="combo-macros">≈240 cal / 29g protein</div>
+            </div>
+        </div>
+
+        <h3 class="combo-subtitle">Protein Boosters</h3>
+        <div class="combo-grid">
+            <div class="combo-card">
+                <div class="combo-title">Add 2 Tbsp cottage cheese to any</div>
+                <div class="combo-macros">+40 cal / +3g protein</div>
+            </div>
+            <div class="combo-card">
+                <div class="combo-title">Add 2 oz chicken sausage</div>
+                <div class="combo-macros">+80 cal / +10g protein</div>
+            </div>
+            <div class="combo-card">
+                <div class="combo-title">Add 1 Tbsp hemp seeds</div>
+                <div class="combo-macros">+55 cal / +3g protein</div>
+            </div>
         </div>
     </div>
 
-    <!-- PAGE 4: More Combinations -->
-    <div class="page">
-        <div class="header">
-            <img src="https://raw.githubusercontent.com/ScubaSteveo42/happy-dose-recipes/c5a1554e30bc432c1286917fb3fb707fcaba7815/NO%20BQ%20HQ.png" alt="Happy Dose" class="logo">
-            <div class="page-number">Page 4</div>
-        </div>
-        
-        <div class="combo-section">
-            <h3 class="subsection-title">Mediterranean</h3>
-            <div class="combo-grid">
-                <div class="combo-card">
-                    <div class="combo-title">Spinach + olives + feta + sundried tomato</div>
-                    <div class="combo-macros">≈200 cal / 26g protein</div>
-                </div>
-                <div class="combo-card">
-                    <div class="combo-title">Roasted red peppers + artichokes + parmesan</div>
-                    <div class="combo-macros">≈210 cal / 27g protein</div>
-                </div>
-                <div class="combo-card">
-                    <div class="combo-title">Chicken sausage + zucchini + tzatziki (after)</div>
-                    <div class="combo-macros">≈250 cal / 30g protein</div>
-                </div>
-            </div>
-
-            <h3 class="subsection-title">Savory & Filling</h3>
-            <div class="combo-grid">
-                <div class="combo-card">
-                    <div class="combo-title">Mushroom + onion + Swiss + Worcestershire</div>
-                    <div class="combo-macros">≈200 cal / 27g protein</div>
-                </div>
-                <div class="combo-card">
-                    <div class="combo-title">Asparagus + goat cheese + chives</div>
-                    <div class="combo-macros">≈230 cal / 28g protein</div>
-                </div>
-                <div class="combo-card">
-                    <div class="combo-title">Brussels sprouts + bacon bits + parmesan</div>
-                    <div class="combo-macros">≈240 cal / 29g protein</div>
-                </div>
-            </div>
-
-            <h3 class="subsection-title">Protein Boosters</h3>
-            <div class="combo-grid">
-                <div class="combo-card">
-                    <div class="combo-title">Add 2 Tbsp cottage cheese to any</div>
-                    <div class="combo-macros">+40 cal / +3g protein</div>
-                </div>
-                <div class="combo-card">
-                    <div class="combo-title">Add 2 oz chicken sausage</div>
-                    <div class="combo-macros">+80 cal / +10g protein</div>
-                </div>
-                <div class="combo-card">
-                    <div class="combo-title">Add 1 Tbsp hemp seeds</div>
-                    <div class="combo-macros">+55 cal / +3g protein</div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="footer">
-            <p>© <span class="footer-brand">Happy Dose</span> • For personal use only</p>
-        </div>
+    <!-- Sticky Download Button -->
+    <div class="sticky-download">
+        <a href="#" class="pdf-download-btn" onclick="downloadPDF()">📄 Get PDF</a>
     </div>
+
+    <div class="footer">
+        <p>© <span class="footer-brand">Happy Dose</span> • support@happydose.fit • For personal use only</p>
+        <p style="margin-top: 10px;"><strong>💡 Pro Tip:</strong> Bookmark this page for quick access while cooking!</p>
+    </div>
+
+    <script>
+        function downloadPDF() {
+            // This function will trigger the PDF download
+            // You'll replace this with your actual PDF file URL
+            const pdfUrl = 'Mug-Scramble-Master-Guide.pdf'; // Replace with your PDF file name
+            
+            // Create a temporary link element
+            const link = document.createElement('a');
+            link.href = pdfUrl;
+            link.download = 'Mug-Scramble-Master-Guide.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
 </body>
 </html>
