@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Microwave Mug Scramble Guide - Happy Dose</title>
+    <title>Microwave Mug Scramble Master Guide - Happy Dose</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -18,7 +18,6 @@
             --light-gray: #F8F8F8;
             --white: #FFFFFF;
             --text-dark: #104B39;
-            --text-medium: #104B39;
         }
 
         body {
@@ -26,23 +25,57 @@
             background-color: var(--white);
             color: var(--text-dark);
             line-height: 1.6;
-            max-width: 8.5in;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 40px;
+            padding: 20px;
         }
 
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--primary-green) 0%, #0f4233 100%);
+            border-radius: 16px;
+            color: white;
         }
 
         .logo {
-            height: 60px;
+            height: 50px;
             width: auto;
-            max-width: 200px;
+            max-width: 150px;
             object-fit: contain;
+            filter: brightness(1.2);
+        }
+
+        .pdf-download-btn {
+            background: var(--accent-orange);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(242, 106, 27, 0.3);
+        }
+
+        .pdf-download-btn:hover {
+            background: #e85d15;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(242, 106, 27, 0.4);
+        }
+
+        .pdf-download-btn::before {
+            content: "📄";
+            font-size: 18px;
         }
 
         .main-title {
@@ -55,13 +88,39 @@
             text-align: center;
         }
 
+        .highlight-text {
+            color: var(--accent-orange);
+        }
+
         .subtitle {
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
             font-size: 18px;
-            color: var(--text-medium);
+            color: var(--text-dark);
             text-align: center;
             margin-bottom: 32px;
+        }
+
+        .download-notice {
+            background: linear-gradient(135deg, #fff5f0 0%, #ffede2 100%);
+            border: 3px solid var(--accent-orange);
+            border-radius: 16px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .download-notice h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .download-notice p {
+            margin-bottom: 15px;
+            font-size: 16px;
         }
 
         .intro-box {
@@ -145,7 +204,7 @@
 
         .grocery-section {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 24px;
             margin-bottom: 40px;
         }
@@ -190,7 +249,7 @@
 
         .combo-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 16px;
             margin-bottom: 24px;
         }
@@ -201,19 +260,23 @@
             border-radius: 12px;
             padding: 16px;
             transition: all 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .combo-card:hover {
             border-color: var(--accent-orange);
             box-shadow: 0 4px 12px rgba(242, 106, 27, 0.15);
+            transform: translateY(-2px);
         }
 
         .combo-title {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
             font-size: 15px;
             color: var(--text-dark);
-            margin-bottom: 8px;
+            flex: 1;
         }
 
         .combo-macros {
@@ -224,7 +287,8 @@
             background-color: #f0f8f5;
             padding: 6px 12px;
             border-radius: 20px;
-            display: inline-block;
+            white-space: nowrap;
+            margin-left: 15px;
         }
 
         .combo-subtitle {
@@ -246,12 +310,14 @@
 
         .footer {
             text-align: center;
-            padding-top: 32px;
+            padding: 32px 20px;
             border-top: 2px solid var(--light-gray);
             font-size: 12px;
-            color: var(--text-medium);
+            color: var(--text-dark);
             font-family: 'Inter', sans-serif;
             margin-top: 40px;
+            background-color: var(--light-gray);
+            border-radius: 12px;
         }
 
         .footer-brand {
@@ -259,37 +325,43 @@
             color: var(--primary-green);
         }
 
-        @media print {
-            body {
-                padding: 0.5in;
-                margin: 0;
-                background: white !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-            
-            .main-title {
-                font-size: 36px;
-            }
-            
-            .combo-card {
-                break-inside: avoid;
-                page-break-inside: avoid;
-            }
-            
-            .grocery-category {
-                break-inside: avoid;
-                page-break-inside: avoid;
-            }
+        .sticky-download {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .sticky-download .pdf-download-btn {
+            padding: 15px 25px;
+            font-size: 14px;
+            box-shadow: 0 6px 25px rgba(242, 106, 27, 0.4);
         }
 
         @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
             .grocery-section {
                 grid-template-columns: 1fr;
             }
             
             .combo-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .combo-card {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .combo-macros {
+                margin-left: 0;
+                margin-top: 10px;
+                text-align: center;
             }
             
             .main-title {
@@ -300,15 +372,25 @@
 </head>
 <body>
     <div class="header">
-        <img src="https://raw.githubusercontent.com/ScubaSteveo42/happy-dose-recipes/main/NO%20BQ%20HQ.png" alt="Happy Dose" class="logo">
+        <img src="https://raw.githubusercontent.com/ScubaSteveo42/happy-dose-recipes/c5a1554e30bc432c1286917fb3fb707fcaba7815/NO%20BQ%20HQ.png" alt="Happy Dose" class="logo">
+        <a href="#" class="pdf-download-btn" onclick="downloadPDF()">Download Printable PDF</a>
     </div>
 
-    <h1 class="main-title">Microwave Mug Scramble Cheat Sheet</h1>
-    <p class="subtitle">Use this guide to build high-protein, low-calorie mug scrambles that fit a fat-loss & muscle-gain plan.</p>
+    <h1 class="main-title">
+        <span class="highlight-text">MUG SCRAMBLE</span> MASTER GUIDE
+    </h1>
+    <p class="subtitle">25+ High-Protein Recipes Ready in 2 Minutes</p>
+
+    <div class="download-notice">
+        <h3>🎯 Get Both Formats!</h3>
+        <p><strong>Interactive Version:</strong> Scroll through this page on any device - perfect for quick reference while cooking!</p>
+        <p><strong>Printable PDF:</strong> Click the download button for a beautiful 4-page PDF to print and keep in your kitchen.</p>
+        <a href="#" class="pdf-download-btn" onclick="downloadPDF()">Download PDF Version</a>
+    </div>
 
     <div class="intro-box">
         <p class="intro-text">
-            Each combo assumes ~1 cup liquid egg whites (~120 cal, 25g protein). Add 1 whole egg for richness (+70 cal, +6g protein).
+            <strong>Each combo assumes ~1 cup liquid egg whites (~120 cal, 25g protein). Add 1 whole egg for richness (+70 cal, +6g protein).</strong>
         </p>
     </div>
 
@@ -323,7 +405,7 @@
         </ul>
     </div>
 
-    <h2 class="section-title">Grocery List for Mug Scrambles</h2>
+    <h2 class="section-title">Grocery Shopping List</h2>
     
     <div class="grocery-section">
         <div class="grocery-category">
@@ -491,8 +573,30 @@
         </div>
     </div>
 
+    <!-- Sticky Download Button -->
+    <div class="sticky-download">
+        <a href="#" class="pdf-download-btn" onclick="downloadPDF()">📄 Get PDF</a>
+    </div>
+
     <div class="footer">
         <p>© <span class="footer-brand">Happy Dose</span> • support@happydose.fit • For personal use only</p>
+        <p style="margin-top: 10px;"><strong>💡 Pro Tip:</strong> Bookmark this page for quick access while cooking!</p>
     </div>
+
+    <script>
+        function downloadPDF() {
+            // This function will trigger the PDF download
+            // You'll replace this with your actual PDF file URL
+            const pdfUrl = 'Mug-Scramble-Master-Guide.pdf'; // Replace with your PDF file name
+            
+            // Create a temporary link element
+            const link = document.createElement('a');
+            link.href = pdfUrl;
+            link.download = 'Mug-Scramble-Master-Guide.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
 </body>
 </html>
