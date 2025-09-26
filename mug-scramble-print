@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Microwave Mug Scramble Guide - Happy Dose</title>
+    <title>Microwave Mug Scramble Master Guide - Happy Dose</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -210,7 +210,7 @@
 
         .grocery-list li {
             padding: 5px 0;
-            font-size: 14px;
+            font-size: 15px;
             position: relative;
             padding-left: 20px;
         }
@@ -328,6 +328,18 @@
                     Each combo assumes ~1 cup liquid egg whites (~120 cal, 25g protein).<br>
                     Add 1 whole egg for richness (+70 cal, +6g protein).
                 </p>
+            </div>
+            
+            <div class="macro-tips">
+                <h3>How to Make Any Mug Scramble</h3>
+                <ul class="tip-list">
+                    <li><strong>Step 1:</strong> Spray mug with cooking spray or add a tiny bit of oil</li>
+                    <li><strong>Step 2:</strong> Add harder vegetables (broccoli, peppers) and microwave 30-60 seconds</li>
+                    <li><strong>Step 3:</strong> Pour in egg whites (and whole egg if using)</li>
+                    <li><strong>Step 4:</strong> Add softer ingredients (spinach, cheese, pre-cooked meats)</li>
+                    <li><strong>Step 5:</strong> Microwave 90 seconds, stir, then 30-60 seconds more until set</li>
+                    <li><strong>Step 6:</strong> Add final toppings (avocado, salsa, hot sauce) and enjoy!</li>
+                </ul>
             </div>
             
             <div class="macro-tips">
