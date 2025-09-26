@@ -36,9 +36,9 @@
             align-items: center;
             margin-bottom: 30px;
             padding: 20px;
-            background: linear-gradient(135deg, var(--primary-green) 0%, #0f4233 100%);
+            background: linear-gradient(135deg, #8FBC8F 0%, #9ACD9A 100%);
             border-radius: 16px;
-            color: white;
+            color: var(--primary-green);
         }
 
         .logo {
@@ -46,7 +46,6 @@
             width: auto;
             max-width: 150px;
             object-fit: contain;
-            filter: brightness(1.2);
         }
 
         .pdf-download-btn {
@@ -74,7 +73,7 @@
         }
 
         .pdf-download-btn::before {
-            content: "";
+            content: "📄";
             font-size: 18px;
         }
 
@@ -373,7 +372,7 @@
 </head>
 <body>
     <div class="header">
-        <img src="https://raw.githubusercontent.com/ScubaSteveo42/happy-dose-recipes/c5a1554e30bc432c1286917fb3fb707fcaba7815/NO%20BQ%20HQ.png" alt="Happy Dose" class="logo">
+        <img src="https://i.imgur.com/gnZh5k7.png" alt="Happy Dose" class="logo">
         <a href="#" class="pdf-download-btn" onclick="downloadPDF()">Download Printable PDF</a>
     </div>
 
