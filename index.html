@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Dose Recipe Template</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #104B39;
+            --accent-orange: #F26A1B;
+            --light-gray: #F8F8F8;
+            --white: #FFFFFF;
+            --text-dark: #2D2D2D;
+            --text-medium: #666666;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 40px;
+            min-height: 11in;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            height: 60px;
+            width: auto;
+            max-width: 200px;
+            object-fit: contain;
+        }
+
+        .recipe-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 48px;
+            color: var(--primary-green);
+            margin-bottom: 12px;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        .recipe-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 20px;
+            color: var(--text-medium);
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .quick-info {
+            background: linear-gradient(135deg, #fff5f0 0%, #ffede2 100%);
+            color: var(--text-dark);
+            padding: 20px;
+            border-radius: 16px;
+            margin-bottom: 40px;
+            border: 4px solid var(--accent-orange);
+            box-shadow: 0 4px 20px rgba(242, 106, 27, 0.15);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            text-align: center;
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .info-icon {
+            width: 32px;
+            height: 32px;
+            margin-bottom: 8px;
+            opacity: 0.9;
+        }
+
+        .info-label {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+            color: var(--accent-orange);
+        }
+
+        .info-value {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--primary-green);
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .section {
+            background-color: var(--light-gray);
+            padding: 32px;
+            border-radius: 16px;
+            position: relative;
+        }
+
+        .section-header {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid var(--accent-orange);
+        }
+
+        .ingredients-list {
+            list-style: none;
+        }
+
+        .ingredients-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 16px;
+            color: var(--text-dark);
+        }
+
+        .ingredients-list li:last-child {
+            border-bottom: none;
+        }
+
+        .ingredients-list li::before {
+            content: "•";
+            color: var(--accent-orange);
+            font-weight: 700;
+            font-size: 20px;
+            margin-right: 12px;
+        }
+
+        .instructions-list {
+            list-style: none;
+            counter-reset: step-counter;
+        }
+
+        .instructions-list li {
+            padding: 16px 0;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 16px;
+            color: var(--text-dark);
+            counter-increment: step-counter;
+            position: relative;
+            padding-left: 50px;
+        }
+
+        .instructions-list li:last-child {
+            border-bottom: none;
+        }
+
+        .instructions-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 16px;
+            background-color: var(--accent-orange);
+            color: var(--white);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .callout-boxes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .callout-box {
+            padding: 24px;
+            border-radius: 12px;
+            border-left: 5px solid var(--accent-orange);
+        }
+
+        .pro-tip {
+            background-color: #fff8f4;
+            border-left-color: var(--accent-orange);
+        }
+
+        .macro-box {
+            background-color: #f0f8f5;
+            border-left-color: var(--primary-green);
+        }
+
+        .callout-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--primary-green);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .callout-title::before {
+            content: "💡";
+            margin-right: 8px;
+            font-size: 18px;
+        }
+
+        .macro-box .callout-title::before {
+            content: "📊";
+        }
+
+        .callout-text {
+            font-size: 14px;
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 2px solid var(--light-gray);
+            font-size: 12px;
+            color: var(--text-medium);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .footer-brand {
+            font-weight: 600;
+            color: var(--primary-green);
+        }
+
+        @media print {
+            body {
+                padding: 0.5in;
+                margin: 0;
+                background: white !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .recipe-title {
+                font-size: 36px;
+            }
+            
+            .quick-info {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .callout-box {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            
+            .section {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Easy editing helpers */
+        [contenteditable="true"] {
+            outline: 2px dashed var(--accent-orange);
+            outline-offset: 2px;
+        }
+
+        [contenteditable="true"]:focus {
+            outline: 3px solid var(--accent-orange);
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            
+            .callout-boxes {
+                grid-template-columns: 1fr;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            
+            .recipe-title {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://raw.githubusercontent.com/ScubaSteveo42/happy-dose-recipes/main/NO%20BQ%20HQ.png" alt="Happy Dose" class="logo">
+    </div>
+
+    <h1 class="recipe-title" contenteditable="true">[Recipe Name]</h1>
+    <p class="recipe-subtitle" contenteditable="true">[Optional Subtitle/Tagline]</p>
+
+    <div class="quick-info">
+        <div class="info-grid">
+            <div class="info-item">
+                <div class="info-icon">⏱️</div>
+                <div class="info-label">Prep Time</div>
+                <div class="info-value" contenteditable="true">[Prep Time]</div>
+            </div>
+            <div class="info-item">
+                <div class="info-icon">🔥</div>
+                <div class="info-label">Calories</div>
+                <div class="info-value" contenteditable="true">[Calories]</div>
+            </div>
+            <div class="info-item">
+                <div class="info-icon">💪</div>
+                <div class="info-label">Protein</div>
+                <div class="info-value" contenteditable="true">[Protein]g</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="section">
+            <h2 class="section-header">Ingredients</h2>
+            <ul class="ingredients-list" contenteditable="true">
+                <li>[Ingredient 1 with amount]</li>
+                <li>[Ingredient 2 with amount]</li>
+                <li>[Ingredient 3 with amount]</li>
+                <li>[Ingredient 4 with amount]</li>
+                <li>[Add more ingredients as needed]</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="section-header">Instructions</h2>
+            <ol class="instructions-list" contenteditable="true">
+                <li>[Step 1: First instruction with clear action]</li>
+                <li>[Step 2: Second instruction detail]</li>
+                <li>[Step 3: Third instruction detail]</li>
+                <li>[Step 4: Final step and serving suggestion]</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="callout-boxes">
+        <div class="callout-box pro-tip">
+            <h3 class="callout-title">Pro Tip</h3>
+            <p class="callout-text" contenteditable="true">[Insert helpful cooking tip, ingredient swap, or time-saving hack here]</p>
+        </div>
+
+        <div class="callout-box macro-box">
+            <h3 class="callout-title">Nutrition Info</h3>
+            <p class="callout-text" contenteditable="true">
+                <strong>Macros per serving:</strong><br>
+                Protein: [X]g | Carbs: [X]g | Fat: [X]g<br>
+                Fiber: [X]g | Sugar: [X]g
+            </p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© <span class="footer-brand">Happy Dose</span> • support@happydose.fit • For personal use only</p>
+    </div>
+</body>
+</html>
