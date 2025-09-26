@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Microwave Mug Scramble Master Guide - Happy Dose</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
             --primary-green: #104B39;
@@ -36,9 +32,9 @@
             align-items: center;
             margin-bottom: 30px;
             padding: 20px;
-            background: linear-gradient(135deg, var(--primary-green) 0%, #0f4233 100%);
+            background: linear-gradient(135deg, #8FBC8F 0%, #9ACD9A 100%);
             border-radius: 16px;
-            color: white;
+            color: var(--primary-green);
         }
 
         .logo {
@@ -46,7 +42,6 @@
             width: auto;
             max-width: 150px;
             object-fit: contain;
-            filter: brightness(1.2);
         }
 
         .pdf-download-btn {
@@ -66,15 +61,13 @@
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(242, 106, 27, 0.3);
         }
-
         .pdf-download-btn:hover {
             background: #e85d15;
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(242, 106, 27, 0.4);
         }
-
         .pdf-download-btn::before {
-            content: "📄";
+            content: "";
             font-size: 18px;
         }
 
@@ -88,9 +81,7 @@
             text-align: center;
         }
 
-        .highlight-text {
-            color: var(--accent-orange);
-        }
+        .highlight-text { color: var(--accent-orange); }
 
         .subtitle {
             font-family: 'Montserrat', sans-serif;
@@ -109,7 +100,6 @@
             margin: 30px 0;
             text-align: center;
         }
-
         .download-notice h3 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
@@ -117,11 +107,7 @@
             margin-bottom: 10px;
             font-size: 20px;
         }
-
-        .download-notice p {
-            margin-bottom: 15px;
-            font-size: 16px;
-        }
+        .download-notice p { margin-bottom: 15px; font-size: 16px; }
 
         .intro-box {
             background: linear-gradient(135deg, #fff5f0 0%, #ffede2 100%);
@@ -132,12 +118,7 @@
             border: 4px solid var(--accent-orange);
             box-shadow: 0 4px 20px rgba(242, 106, 27, 0.15);
         }
-
-        .intro-text {
-            font-size: 16px;
-            text-align: center;
-            font-weight: 500;
-        }
+        .intro-text { font-size: 16px; text-align: center; font-weight: 500; }
 
         .macro-tips {
             background-color: #f0f8f5;
@@ -146,7 +127,6 @@
             margin-bottom: 32px;
             border-left: 5px solid var(--primary-green);
         }
-
         .macro-tips h3 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
@@ -156,24 +136,15 @@
             display: flex;
             align-items: center;
         }
+        .macro-tips h3::before { content: "📊"; margin-right: 10px; font-size: 22px; }
 
-        .macro-tips h3::before {
-            content: "📊";
-            margin-right: 10px;
-            font-size: 22px;
-        }
-
-        .tip-list {
-            list-style: none;
-        }
-
+        .tip-list { list-style: none; }
         .tip-list li {
             padding: 6px 0;
             font-size: 15px;
             position: relative;
             padding-left: 20px;
         }
-
         .tip-list li::before {
             content: "•";
             color: var(--primary-green);
@@ -194,7 +165,6 @@
             display: flex;
             align-items: center;
         }
-
         .section-title::before {
             content: "■";
             color: var(--accent-orange);
@@ -208,13 +178,7 @@
             gap: 24px;
             margin-bottom: 40px;
         }
-
-        .grocery-category {
-            background-color: var(--light-gray);
-            padding: 20px;
-            border-radius: 12px;
-        }
-
+        .grocery-category { background-color: var(--light-gray); padding: 20px; border-radius: 12px; }
         .category-title {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
@@ -222,11 +186,7 @@
             color: var(--primary-green);
             margin-bottom: 12px;
         }
-
-        .grocery-list {
-            list-style: none;
-        }
-
+        .grocery-list { list-style: none; }
         .grocery-list li {
             padding: 4px 0;
             font-size: 15px;
@@ -234,7 +194,6 @@
             padding-left: 20px;
             line-height: 1.4;
         }
-
         .grocery-list li::before {
             content: "•";
             color: var(--accent-orange);
@@ -244,16 +203,8 @@
             left: 0;
         }
 
-        .combo-section {
-            margin-bottom: 32px;
-        }
-
-        .combo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 12px;
-            margin-bottom: 20px;
-        }
+        .combo-section { margin-bottom: 32px; }
+        .combo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; margin-bottom: 20px; }
 
         .combo-card {
             background-color: var(--white);
@@ -265,21 +216,9 @@
             justify-content: space-between;
             align-items: center;
         }
+        .combo-card:hover { border-color: var(--accent-orange); box-shadow: 0 4px 12px rgba(242, 106, 27, 0.15); transform: translateY(-2px); }
 
-        .combo-card:hover {
-            border-color: var(--accent-orange);
-            box-shadow: 0 4px 12px rgba(242, 106, 27, 0.15);
-            transform: translateY(-2px);
-        }
-
-        .combo-title {
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            font-size: 14px;
-            color: var(--text-dark);
-            flex: 1;
-        }
-
+        .combo-title { font-family: 'Inter', sans-serif; font-weight: 500; font-size: 14px; color: var(--text-dark); flex: 1; }
         .combo-macros {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
@@ -301,13 +240,7 @@
             display: flex;
             align-items: center;
         }
-
-        .combo-subtitle::before {
-            content: "■";
-            color: var(--accent-orange);
-            margin-right: 10px;
-            font-size: 18px;
-        }
+        .combo-subtitle::before { content: "■"; color: var(--accent-orange); margin-right: 10px; font-size: 18px; }
 
         .footer {
             text-align: center;
@@ -320,61 +253,26 @@
             background-color: var(--light-gray);
             border-radius: 12px;
         }
+        .footer-brand { font-weight: 600; color: var(--primary-green); }
 
-        .footer-brand {
-            font-weight: 600;
-            color: var(--primary-green);
-        }
-
-        .sticky-download {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
-
-        .sticky-download .pdf-download-btn {
-            padding: 15px 25px;
-            font-size: 14px;
-            box-shadow: 0 6px 25px rgba(242, 106, 27, 0.4);
-        }
+        .sticky-download { position: fixed; bottom: 20px; right: 20px; z-index: 1000; }
+        .sticky-download .pdf-download-btn { padding: 15px 25px; font-size: 14px; box-shadow: 0 6px 25px rgba(242, 106, 27, 0.4); }
 
         @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
-            }
-            
-            .grocery-section {
-                grid-template-columns: 1fr;
-            }
-            
-            .combo-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .combo-card {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            
-            .combo-macros {
-                margin-left: 0;
-                margin-top: 10px;
-                text-align: center;
-            }
-            
-            .main-title {
-                font-size: 32px;
-            }
+            .header { flex-direction: column; gap: 15px; text-align: center; }
+            .grocery-section { grid-template-columns: 1fr; }
+            .combo-grid { grid-template-columns: 1fr; }
+            .combo-card { flex-direction: column; align-items: stretch; }
+            .combo-macros { margin-left: 0; margin-top: 10px; text-align: center; }
+            .main-title { font-size: 32px; }
         }
     </style>
 </head>
 <body>
     <div class="header">
         <img src="https://i.imgur.com/gnZh5k7.png" alt="Happy Dose" class="logo">
-        <a href="#" class="pdf-download-btn" onclick="downloadPDF()">Download Printable PDF</a>
+        <!-- Button now goes straight to the viewer with your PDF -->
+        <a class="pdf-download-btn" href="viewer.html?file=Mug-Scramble-Master-Guide.pdf">Download Printable PDF</a>
     </div>
 
     <h1 class="main-title">
@@ -386,7 +284,8 @@
         <h3>🎯 Get Both Formats!</h3>
         <p><strong>Interactive Version:</strong> Scroll through this page on any device - perfect for quick reference while cooking!</p>
         <p><strong>Printable PDF:</strong> Click the download button for a beautiful 4-page PDF to print and keep in your kitchen.</p>
-        <a href="#" class="pdf-download-btn" onclick="downloadPDF()">Download PDF Version</a>
+        <!-- Also points directly to viewer + PDF (no JS needed) -->
+        <a class="pdf-download-btn" href="viewer.html?file=Mug-Scramble-Master-Guide.pdf">Download PDF Version</a>
     </div>
 
     <div class="intro-box">
@@ -419,7 +318,6 @@
     </div>
 
     <h2 class="section-title">Grocery Shopping List</h2>
-    
     <div class="grocery-section">
         <div class="grocery-category">
             <h3 class="category-title">Eggs & Protein Base</h3>
@@ -588,28 +486,13 @@
 
     <!-- Sticky Download Button -->
     <div class="sticky-download">
-        <a href="#" class="pdf-download-btn" onclick="downloadPDF()">📄 Get PDF</a>
+        <!-- Also links straight to viewer + PDF -->
+        <a class="pdf-download-btn" href="viewer.html?file=Mug-Scramble-Master-Guide.pdf">📄 Get PDF</a>
     </div>
 
     <div class="footer">
         <p>© <span class="footer-brand">Happy Dose</span> • support@happydose.fit • For personal use only</p>
         <p style="margin-top: 10px;"><strong>💡 Pro Tip:</strong> Bookmark this page for quick access while cooking!</p>
     </div>
-
-    <script>
-        function downloadPDF() {
-            // This function will trigger the PDF download
-            // You'll replace this with your actual PDF file URL
-            const pdfUrl = 'Mug-Scramble-Master-Guide.pdf'; // Replace with your PDF file name
-            
-            // Create a temporary link element
-            const link = document.createElement('a');
-            link.href = pdfUrl;
-            link.download = 'Mug-Scramble-Master-Guide.pdf';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-    </script>
 </body>
 </html>
