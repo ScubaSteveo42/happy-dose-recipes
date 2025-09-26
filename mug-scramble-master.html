@@ -204,23 +204,23 @@
 
         .grocery-section {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
             margin-bottom: 40px;
         }
 
         .grocery-category {
             background-color: var(--light-gray);
-            padding: 20px;
+            padding: 16px;
             border-radius: 12px;
         }
 
         .category-title {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            font-size: 18px;
+            font-size: 16px;
             color: var(--primary-green);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .grocery-list {
@@ -228,17 +228,18 @@
         }
 
         .grocery-list li {
-            padding: 4px 0;
-            font-size: 14px;
+            padding: 2px 0;
+            font-size: 13px;
             position: relative;
-            padding-left: 20px;
+            padding-left: 16px;
+            line-height: 1.4;
         }
 
         .grocery-list li::before {
             content: "•";
             color: var(--accent-orange);
             font-weight: 700;
-            font-size: 16px;
+            font-size: 14px;
             position: absolute;
             left: 0;
         }
@@ -249,16 +250,16 @@
 
         .combo-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 16px;
-            margin-bottom: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
         }
 
         .combo-card {
             background-color: var(--white);
             border: 2px solid #e8e8e8;
             border-radius: 12px;
-            padding: 16px;
+            padding: 12px;
             transition: all 0.3s ease;
             display: flex;
             justify-content: space-between;
@@ -274,7 +275,7 @@
         .combo-title {
             font-family: 'Inter', sans-serif;
             font-weight: 500;
-            font-size: 15px;
+            font-size: 14px;
             color: var(--text-dark);
             flex: 1;
         }
@@ -282,21 +283,21 @@
         .combo-macros {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            font-size: 14px;
+            font-size: 12px;
             color: var(--primary-green);
             background-color: #f0f8f5;
-            padding: 6px 12px;
-            border-radius: 20px;
+            padding: 4px 10px;
+            border-radius: 15px;
             white-space: nowrap;
-            margin-left: 15px;
+            margin-left: 12px;
         }
 
         .combo-subtitle {
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
-            font-size: 20px;
+            font-size: 18px;
             color: var(--accent-orange);
-            margin: 32px 0 16px 0;
+            margin: 24px 0 12px 0;
             display: flex;
             align-items: center;
         }
@@ -392,6 +393,18 @@
         <p class="intro-text">
             <strong>Each combo assumes ~1 cup liquid egg whites (~120 cal, 25g protein). Add 1 whole egg for richness (+70 cal, +6g protein).</strong>
         </p>
+    </div>
+
+    <div class="macro-tips">
+        <h3>How to Make Any Mug Scramble</h3>
+        <ul class="tip-list">
+            <li><strong>Step 1:</strong> Spray mug with cooking spray or add a tiny bit of oil</li>
+            <li><strong>Step 2:</strong> Add harder vegetables (broccoli, peppers) and microwave 30-60 seconds</li>
+            <li><strong>Step 3:</strong> Pour in egg whites (and whole egg if using)</li>
+            <li><strong>Step 4:</strong> Add softer ingredients (spinach, cheese, pre-cooked meats)</li>
+            <li><strong>Step 5:</strong> Microwave 90 seconds, stir, then 30-60 seconds more until set</li>
+            <li><strong>Step 6:</strong> Add final toppings (avocado, salsa, hot sauce) and enjoy!</li>
+        </ul>
     </div>
 
     <div class="macro-tips">
